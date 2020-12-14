@@ -1,20 +1,21 @@
 export const schema = gql`
   type Todo {
-    body: String
-    _id: ID!
     id: Int!
+    body: String
     status: String
   }
+
   input TodoInput {
-    id: Int!
     body: String!
     status: String!
   }
-  type TodoPage {
-    data: [Todo]!
-    after: String
-    before: String
-  }
+
+  # type TodoPage {
+  #   data: [Todo]!
+  #   after: String
+  #   before: String
+  # }
+
   type Query {
     todos: TodoPage!
   }
