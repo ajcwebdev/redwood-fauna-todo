@@ -17,8 +17,9 @@ export const schema = gql`
   # }
 
   type Query {
-    todos: TodoPage!
+    todos: [Todo]
   }
+
   type Mutation {
     createTodo(data: TodoInput!): Todo!
     updateTodo(
