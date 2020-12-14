@@ -33,12 +33,13 @@ export const todos = async () => {
 // export const todos = () => db.todo.findMany()
 
 
-export const createTodo = ({body}) => client.query(
-  Create(
-    Collection('Todo'),
-    { data: {body} }
+export const createTodo = async ({ body }) => {
+  const response = await client.query(
+    Create(Collection('Todo'), { data: { body, status: 'on' } })
   )
-)
+  console.log(response)
+  return response.data
+}
 
 // export const createTodo = ({ body }) => db.todo.create({ data: { body } })
 
