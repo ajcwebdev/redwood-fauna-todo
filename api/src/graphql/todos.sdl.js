@@ -21,11 +21,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createTodo(data: TodoInput!): Todo!
-    updateTodo(
-      id: ID!
-      data: TodoInput!
-    ): Todo
-    deleteTodo(id: ID!): Todo
+    createTodo(body: String!): Todo!
+    updateTodo(id: Int!, data: TodoInput!): Todo
+    deleteTodo(id: Int!): Todo
   }
 `
