@@ -43,14 +43,8 @@ export const createTodo = async ({ body }) => {
 
 // export const createTodo = ({ body }) => db.todo.create({ data: { body } })
 
-export const updateTodoStatus = () => client.query(
-  Update(
-    Ref(
-      Collection('Todo'), '282781647360754176'
-    ),
-    { data }
-  )
-)
+// export const updateTodoStatus = () =>
+//   client.query(Update(Ref(Collection('Todo'), '282781647360754176'), { data }))
 
 // export const updateTodoStatus = ({ id, status }) =>
 //   db.todo.update({
@@ -58,14 +52,8 @@ export const updateTodoStatus = () => client.query(
 //     where: { id },
 //   })
 
-export const renameTodo = () => client.query(
-  Update(
-    Ref(
-      Collection('Todo'), '282781647360754176'
-    ),
-    { data }
-  )
-)
+// export const renameTodo = () =>
+//   client.query(Update(Ref(Collection('Todo'), '282781647360754176'), { data }))
 
 // export const renameTodo = ({ id, body }) =>
 //   db.todo.update({
