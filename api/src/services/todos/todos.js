@@ -15,21 +15,20 @@ const {
   Update,
 } = faunadb.query;
 
-export const todos = () => client.query(
-  Map(
-    Paginate(
-      Match(
-        Index("todos")
-      )
-    ),
-    Lambda(
-      "X",
-      Get(
-        Var("X")
-      )
-    )
+export const todos = async () => {
+  const response = await client.query(
+    Map(Paginate(Match(Index('todos'))), Lambda('X', Get(Var('X'))))
   )
-)
+  console.log(response)
+
+  const results = response.data.map((item) => {
+    return item.data
+  })
+
+  console.log(results)
+
+  return results
+}
 
 // export const todos = () => db.todo.findMany()
 
